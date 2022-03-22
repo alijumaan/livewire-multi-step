@@ -15,6 +15,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <livewire:styles/>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -32,5 +33,9 @@
                 {{ $slot }}
             </main>
         </div>
+        <livewire:scripts/>
+
+        <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
+        <x-livewire-alert::flash />
     </body>
 </html>
