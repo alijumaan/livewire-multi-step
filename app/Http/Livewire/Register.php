@@ -3,17 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use App\Rules\PhoneNumber;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class Register extends Component
 {
-    use LivewireAlert;
-
     public $name;
     public $email;
     public $username;
@@ -81,11 +77,9 @@ class Register extends Component
             'birth_date' => $this->birth_date,
         ]);
 
-        $this->alert('success', 'Account created successfully');
-
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('dashboard');
     }
 
     public function render()

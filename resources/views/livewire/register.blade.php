@@ -83,7 +83,7 @@
             </span>
             @enderror
         </div>
-        <div class="mt-3">
+        <div class="flex justify-between mt-3">
             <x-button wire:click.prevent="backToStepOne" type="button" class="">{{ __('Previous') }}</x-button>
             <x-button wire:click.prevent="checkStepTwo">{{ __('Next') }}</x-button>
         </div>
